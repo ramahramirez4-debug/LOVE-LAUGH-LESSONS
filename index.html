@@ -1,61 +1,111 @@
-<h2 class="section-title">
-  Life Lessons 
-</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love • Laugh • Lessons</title>
 
-<p class="section-subtitle">
-  Things life has taught me.
-</p>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-<div class="cards">
+body {
+  font-family: Georgia, serif;
+  background: #090505;
+  color: #f8eeee;
+  line-height: 1.7;
+}
 
-  <div class="card">
-    <h3>01 — Know Your Worth</h3>
-    <p>
-      Never make yourself smaller just to make
-      someone else comfortable.
-    </p>
-  </div>
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background:
+    radial-gradient(circle at top, #6d111c, #18070b 45%, #050303 80%);
+}
 
-  <div class="card">
-    <h3>02 — Keep Going</h3>
-    <p>
-      Some chapters are difficult, but difficult
-      chapters can still lead to beautiful stories.
-    </p>
-  </div>
+.hero-content {
+  max-width: 700px;
+}
 
-  <div class="card">
-    <h3>03 — Choose Yourself</h3>
-    <p>
-      Protect your peace, trust your journey and
-      remember that your story is still being written.
-    </p>
-  </div>
+.heart {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
 
-</div>
+h1 {
+  font-size: 52px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
 
-</section>
+.hero p {
+  color: #e8caca;
+  font-size: 19px;
+}
 
-<section id="contact">
+.tagline {
+  margin-top: 25px;
+  font-style: italic;
+}
 
-  <h2 class="section-title">
-    Let's Connect
-  </h2>
+.section {
+  padding: 70px 25px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-  <p class="section-subtitle">
-    Come along for the journey.
-  </p>
+.section-title {
+  color: #e8a1a1;
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-  <p>
-    Follow my world, share a laugh and grow with me.
-  </p>
+.section-subtitle {
+  text-align: center;
+  color: #c9aaaa;
+  margin-bottom: 35px;
+}
 
-</section>
+.cards {
+  display: grid;
+  gap: 22px;
+}
 
-<footer>
-  Made with <span class="heart">♥</span>
-  • Love • Laugh • Lessons
-</footer>
+.card {
+  background: linear-gradient(145deg, #241012, #100708);
+  border: 1px solid #67252d;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
 
-</body>
-</html>
+.card h3 {
+  color: #f0aaaa;
+  margin-bottom: 10px;
+}
+
+.connect {
+  text-align: center;
+  background: #120608;
+}
+
+.social {
+  margin-top: 25px;
+}
+
+.social a {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 22px;
+  border: 1px solid #8b3943;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration:
