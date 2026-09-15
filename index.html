@@ -1,206 +1,394 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love • Laugh • Lessons</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <title>Love • Laugh • Lessons</title>
 
-body {
-  font-family: Georgia, serif;
-  background: #090505;
-  color: #f5eeee;
-  line-height: 1.7;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  background:
-    radial-gradient(circle at top, #5b1018 0%, #21070b 35%, #090505 75%);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.container {
-  max-width: 800px;
-}
+    body {
+      font-family: Georgia, serif;
+      background: #090505;
+      color: #f5eeee;
+      line-height: 1.7;
+    }
 
-.logo {
-  font-size: 16px;
-  letter-spacing: 5px;
-  color: #d8a0a8;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-}
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 5, 5, 0.96);
+      border-bottom: 1px solid #3a2025;
+      padding: 18px 20px;
+      text-align: center;
+    }
 
-h1 {
-  font-size: 52px;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-}
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
 
-h1 span {
-  color: #c9364b;
-}
+    header p {
+      color: #c9aeb2;
+      margin-top: 5px;
+      font-size: 14px;
+    }
 
-.tagline {
-  font-size: 21px;
-  color: #d9c4c7;
-  margin-bottom: 35px;
-}
+    nav {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-.quote {
-  font-size: 25px;
-  font-style: italic;
-  margin: 30px 0;
-  color: #fff;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border: 1px solid #4b292f;
+      border-radius: 20px;
+      font-size: 14px;
+    }
 
-.cards {
-  display: grid;
-  gap: 18px;
-  margin: 35px 0;
-}
+    nav a:hover {
+      background: #4b292f;
+    }
 
-.card {
-  background: linear-gradient(145deg, #321016, #12070a);
-  border: 1px solid #67232d;
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
-}
+    /* HERO */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      background:
+        radial-gradient(circle at top, #32131b, #090505 65%);
+    }
 
-.card h2 {
-  color: #e05a6b;
-  margin-bottom: 8px;
-}
+    .hero-content {
+      max-width: 800px;
+    }
 
-.card p {
-  color: #d8c5c8;
-}
+    .hero h2 {
+      font-size: clamp(40px, 10vw, 75px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
 
-.connect {
-  margin-top: 30px;
-  padding: 25px;
-  background: #21080d;
-  border-radius: 18px;
-}
+    .hero h2 span {
+      display: block;
+    }
 
-.connect h2 {
-  margin-bottom: 10px;
-}
+    .hero-text {
+      color: #d8c4c7;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
 
-.social a {
-  display: inline-block;
-  margin: 8px;
-  padding: 12px 22px;
-  border: 1px solid #8b3943;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-}
+    .button {
+      display: inline-block;
+      background: #fff;
+      color: #090505;
+      padding: 13px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.social a:hover {
-  background: #741d2a;
-}
+    .button:hover {
+      transform: scale(1.03);
+    }
 
-footer {
-  margin-top: 35px;
-  color: #927b80;
-  font-size: 14px;
-}
+    /* GENERAL */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 38px;
-  }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-  .tagline {
-    font-size: 18px;
-  }
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 8px;
+    }
 
-  .quote {
-    font-size: 21px;
-  }
-}
-</style>
+    .section-title p {
+      color: #bca7aa;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #130a0c;
+      border: 1px solid #3a2025;
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #80505a;
+    }
+
+    .card .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cbb9bc;
+    }
+
+    /* FEATURED STORIES */
+    .story {
+      background: #100709;
+      border-left: 4px solid #80505a;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .story h3 {
+      margin-bottom: 10px;
+    }
+
+    .story p {
+      color: #cdbabd;
+    }
+
+    /* QUOTE */
+    .quote {
+      text-align: center;
+      padding: 80px 20px;
+      background: #16090d;
+    }
+
+    .quote p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 28px;
+      font-style: italic;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      border-top: 1px solid #3a2025;
+      color: #9e898d;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .hero {
+        min-height: 65vh;
+      }
+
+      .section-title h2 {
+        font-size: 31px;
+      }
+
+      .quote p {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="container">
+  <header>
+    <h1>LOVE • LAUGH • LESSONS</h1>
+    <p>Stories, feelings, laughter & lessons for real life.</p>
 
-    <div class="logo">Love • Laugh • Lessons</div>
+    <nav>
+      <a href="#love">❤️ Love</a>
+      <a href="#laugh">😂 Laugh</a>
+      <a href="#lessons">📖 Lessons</a>
+    </nav>
+  </header>
 
-    <h1>Love. <span>Laugh.</span> Learn.</h1>
+  <main>
 
-    <p class="tagline">
-      Real moments. Real lessons. A little laughter along the way.
-    </p>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>
+          <span>LOVE ❤️</span>
+          <span>LAUGH 😂</span>
+          <span>LESSONS 📖</span>
+        </h2>
 
-    <p class="quote">
-      “Life doesn't have to be perfect to be beautiful.”
-    </p>
+        <p class="hero-text">
+          Real stories. Real emotions. Real lessons.
+          A place to smile, think, feel and grow.
+        </p>
 
-    <div class="cards">
+        <a href="#love" class="button">Explore the Stories</a>
+      </div>
+    </section>
 
-      <div class="card">
-        <h2>❤️ Love</h2>
+
+    <!-- LOVE -->
+    <section id="love">
+      <div class="section-title">
+        <h2>❤️ LOVE</h2>
+        <p>Because love can be beautiful, complicated and unforgettable.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">💞</div>
+          <h3>Real Love</h3>
+          <p>
+            Love isn't always perfect. Sometimes it means patience,
+            understanding, forgiveness and choosing each other.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💔</div>
+          <h3>Heartbreak</h3>
+          <p>
+            Some endings hurt deeply. But losing someone doesn't mean
+            losing yourself.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌹</div>
+          <h3>Relationships</h3>
+          <p>
+            Healthy relationships grow through honesty, communication,
+            respect and genuine effort.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LAUGH -->
+    <section id="laugh">
+      <div class="section-title">
+        <h2>😂 LAUGH</h2>
+        <p>Life is serious enough. Let's find something to smile about.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🤣</div>
+          <h3>Relatable Moments</h3>
+          <p>
+            Those everyday situations that make you stop and say,
+            "Am I the only one?"
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">😅</div>
+          <h3>Funny Stories</h3>
+          <p>
+            Embarrassing moments, unexpected situations and stories
+            that somehow become your funniest memories.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">😂</div>
+          <h3>Just Laugh</h3>
+          <p>
+            Sometimes you don't need advice. You just need a good laugh
+            and a reason to smile again.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LESSONS -->
+    <section id="lessons">
+      <div class="section-title">
+        <h2>📖 LESSONS</h2>
+        <p>Every experience can teach us something.</p>
+      </div>
+
+      <div class="story">
+        <h3>Lesson #1 — Protect Your Peace</h3>
         <p>
-          Stories about relationships, self-love, confidence,
-          and the things that make our hearts grow.
+          Not every argument deserves your energy. Sometimes walking away
+          isn't weakness. It's knowing what deserves your attention.
         </p>
       </div>
 
-      <div class="card">
-        <h2>✨ Laugh</h2>
+      <div class="story">
+        <h3>Lesson #2 — Know Your Worth</h3>
         <p>
-          Because life is better when we can laugh at the
-          beautiful, funny, and unexpected moments.
+          Never make yourself smaller just to keep someone comfortable.
+          The right people won't require you to lose yourself.
         </p>
       </div>
 
-      <div class="card">
-        <h2>🌹 Lessons</h2>
+      <div class="story">
+        <h3>Lesson #3 — Keep Growing</h3>
         <p>
-          Every experience teaches us something.
-          Take the lesson, keep the wisdom, and keep moving.
+          Your past can explain where you came from, but it doesn't have
+          to decide where you're going.
         </p>
       </div>
+    </section>
 
+
+    <!-- QUOTE -->
+    <div class="quote">
+      <p>
+        "Laugh at the moments, love the people, and learn from everything."
+      </p>
     </div>
 
-    <div class="connect">
-      <h2>Let's Connect</h2>
-      <p>Follow the journey and be part of the story.</p>
+  </main>
 
-      <div class="social">
-        <a href="https://www.tiktok.com/@ramahlee3"target="_blank">
-          TikTok
-        </a>
 
-        <a href="https://www.instagram.com/ramah.lee" target="_blank">
-          Instagram
-        </a>
-      </div>
-    </div>
-
-    <footer>
-      © 2026 Love • Laugh • Lessons
-    </footer>
-
-  </div>
-</section>
+  <footer>
+    <p>© 2026 Love • Laugh • Lessons</p>
+    <p>Made with ❤️ for real people and real stories.</p>
+  </footer>
 
 </body>
 </html>
